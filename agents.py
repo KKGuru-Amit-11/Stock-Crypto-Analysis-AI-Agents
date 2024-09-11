@@ -2,17 +2,17 @@
 import os
 from crewai import Agent
 from tools import scrape_tool,search_tool
-from langchain_google_genai import ChatGoogleGenerativeAI
-# from langchain_groq import ChatGroq
-
-# Creating LLM Model
-os.environ['GOOGLE_API_KEY']='AIzaSyD5ggkVEWVzFE3NaFa73a0MHuJPmkT3U8M'
-llm_model = ChatGoogleGenerativeAI(model='gemini-1.5-flash',
-                                   api_key=os.getenv('GOOGLE_API_KEY'))
+# from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_groq import ChatGroq
 
 # # Creating LLM Model
-# os.environ['GROQ_API_KEY']='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'
-# llm_model = ChatGroq(model='llama3-8b-8192',api_key=os.getenv('GROQ_API_KEY'))
+# os.environ['GOOGLE_API_KEY']='AIzaSyD5ggkVEWVzFE3NaFa73a0MHuJPmkT3U8M'
+# llm_model = ChatGoogleGenerativeAI(model='gemini-1.5-flash',
+#                                    api_key=os.getenv('GOOGLE_API_KEY'))
+
+# Creating LLM Model
+os.environ['GROQ_API_KEY']='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'
+llm_model = ChatGroq(model='llama3-8b-8192',api_key=os.getenv('GROQ_API_KEY'))
 
 # Creating Multi AI Agents
 data_analyst_agent = Agent(
