@@ -70,4 +70,4 @@ if st.button("**Generate...**"):
         res=crew.kickoff(inputs=financial_trading_input)
         st.markdown(res)
         result=str(res)
-        st.download_button(label='Download Text File',file_name=f'{stock_selection}Report.txt',data=result)
+        st.download_button(label='Download Text File',file_name=f'{stock_value}Report.txt',data=result)
